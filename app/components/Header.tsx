@@ -9,7 +9,7 @@ export default function Header() {
             <div className="w-fit ml-[-1vw]">
                 <Link href="/" passHref>
                     <Image
-                        src="/logo_ebird.png"
+                        src="/Logo_ebird.png"
                         alt="eBird Logo"
                         width={160}
                         height={60}
