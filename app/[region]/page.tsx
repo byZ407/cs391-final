@@ -9,12 +9,16 @@ import { BirdObservationData } from "../types/bird";
 
 const MainContainer = styled.div`
     min-height: 100vh;
-    width: 80vw;
-    margin: 5vh auto;
+    width: 100vw;
     padding: 5vh 3vw;
     font-family: "Cinzel", serif;
     color: white;
     text-align: center;
+    background-image: url('/bird.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 `;
 
 const LoadMoreButton = styled.button`
