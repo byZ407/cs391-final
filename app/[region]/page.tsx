@@ -54,7 +54,16 @@ export default function RegionPage() {
 
     if (!region) return <div style={{ color: "red" }}>Invalid region code</div>;
     if (error) return <div style={{ color: "red" }}>Error: {error.message}</div>;
-    if (!data) return <div style={{ color: "darkgoldenrod" }}>Loading...</div>;
+    if (!data) return <div style={{
+        color: "black",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "3vw"
+    }}>
+        Loading...
+    </div>;
     if (data.error) return <div style={{ color: "red" }}>Error: {data.error}</div>;
 
     const allBirds: BirdObservationData[] = data.data;
@@ -63,7 +72,7 @@ export default function RegionPage() {
 
     return (
         <MainContainer>
-            <h2 style={{ marginBottom: "3vh", fontSize: "calc(10px + 2vw)" }}>
+            <h2 style={{ marginBottom: "3vh", fontSize: "calc(10px + 2vw)", fontWeight: "bold" }}>
                 Bird Sightings in {region}
             </h2>
 
@@ -76,6 +85,7 @@ export default function RegionPage() {
                         comName={bird.comName}
                         sciName={bird.sciName}
                         obsDt={bird.obsDt}
+                        locName={bird.locName || "Unknown"}
                     />
                 ))
             )}

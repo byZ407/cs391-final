@@ -12,16 +12,18 @@ const ObsWrapper = styled.div`
     border-left: 10px solid #446677;
 `;
 
-export default function BirdObservation({ comName, sciName, obsDt }: {
+export default function BirdObservation({ comName, sciName, obsDt, locName }: {
     comName: string;
     sciName: string;
     obsDt: string;
+    locName: string;
 }) {
     return (
         <ObsWrapper>
-            <h3>{comName}</h3>
+            <h3><strong>{comName}</strong></h3>
             <p><i>{sciName}</i></p>
             <p>Last Seen: {obsDt}</p>
+            <p>Location: {locName}</p>
         </ObsWrapper>
     );
 }

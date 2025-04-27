@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const HomePage = styled.div`
-    background-image: url('/7 (1).png');
+    background-image: url('/birdbackground.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,26 +21,27 @@ const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Cinzel", serif;
     color: black;
-    margin: 20px auto;
-    padding: 10vh 8vw;
+    margin: auto;
+    padding: 10vh 6vw;
     max-width: 60vw;
     text-align: center;
+    background-color: rgba(255,255,255,50%);
+    border-radius: 50px;
     
     h1 {
-        font-size: calc(15px + 2vw);
+        font-size: calc(35px + 2vw);
         margin-bottom: 1.5vh;
     }
 
     h3 {
-        font-size: calc(10px + 1vw);
+        font-size: calc(20px + 1vw);
         margin-bottom: 3vh;
     }
 
     @media screen and (max-width: 1000px) {
         max-width: 80vw;
-        padding: 2rem;
     }
 `;
 
@@ -48,11 +49,11 @@ const StyledDiv = styled.div`
 const StyledInput = styled.input`
     padding: 1vh;
     margin-bottom: 3vh;
-    border-radius: 5px;
-    font-size: calc(5px + 1vw);
+    border-radius: 10px;
+    font-size: calc(15px + 1vw);
     width: 80%;
     max-width: 300px;
-    background-color: #fffF;
+    background-color: #FFFF;
     color: #282828;
 
     @media screen and (max-width: 1000px) {
@@ -62,12 +63,12 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
     font-weight: bold;
-    font-size: calc(5px + 1vw);
+    font-size: calc(10px + 1vw);
     padding: 1.5vh 1.5vw;
     border: none;
     background-color: #36824b;
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -84,7 +85,7 @@ export default function Home() {
   return (
       <HomePage>
         <StyledDiv>
-          <h1>eBIRD</h1>
+          <h1>eBird</h1>
           <h3>Enter an eBird Region Code to see bird sightings.</h3>
             <StyledInput type="text" placeholder="e.g. US-NY-053" value={region} onChange={(e) =>setRegion(e.target.value)}/>
           <Link href={`/${region}`} passHref><StyledButton>Get Bird Data</StyledButton></Link>
