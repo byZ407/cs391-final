@@ -31,12 +31,12 @@ const StyledDiv = styled.div`
     border-radius: 50px;
     
     h1 {
-        font-size: calc(35px + 1vw);
+        font-size: calc(20px + 2.5vw);
         margin-bottom: 1.5vh;
     }
 
     h3 {
-        font-size: calc(20px + 0.5vw);
+        font-size: calc(10px + 1.5vw);
         margin-bottom: 3vh;
     }
 
@@ -50,7 +50,7 @@ const StyledInput = styled.input`
     padding: 1vh;
     margin-bottom: 3vh;
     border-radius: 10px;
-    font-size: calc(15px + 0.5vw);
+    font-size: calc(5px + 1.5vw);
     width: 80%;
     max-width: 300px;
     background-color: #FFFF;
@@ -63,7 +63,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
     font-weight: bold;
-    font-size: calc(10px + 0.5vw);
+    font-size: calc(5px + 1vw);
     padding: 1.5vh 1.5vw;
     border: none;
     background-color: #36824b;
