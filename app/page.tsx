@@ -63,7 +63,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
     font-weight: bold;
-    font-size: calc(5px + 1vw);
+    font-size: calc(10px + 0.5vw);
     padding: 1.5vh 1.5vw;
     border: none;
     background-color: #36824b;
@@ -86,7 +86,7 @@ export default function Home() {
       <HomePage>
         <StyledDiv>
           <h1>eBird</h1>
-          <h3>Enter an eBird Region Code to see bird sightings.</h3>
+          <h3>Enter an eBird Region Code to see bird sightings in the area.</h3>
             <StyledInput type="text" placeholder="e.g. US-NY-053" value={region} onChange={(e) =>setRegion(e.target.value)}/>
           <Link href={`/${region}`} passHref><StyledButton>Get Bird Data</StyledButton></Link>
         </StyledDiv>
