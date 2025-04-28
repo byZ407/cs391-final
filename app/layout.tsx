@@ -1,3 +1,10 @@
+/*
+ * layout.tsx
+ * Layout component for the eBird app
+ * Wraps all pages with header and footer, applying global styles
+ * Responsible: Yunzhe Bi
+ */
+
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";

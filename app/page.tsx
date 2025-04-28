@@ -1,15 +1,23 @@
 "use client";
 
+/*
+ * page.tsx
+ * Home page for the eBird app
+ * Users can input a region code and get navigated to the observation page for that region
+ * Responsible: Yunzhe Bi
+ */
+
 import { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
+// Styled component for the home page, including a background image
 const HomePage = styled.div`
     background-image: url('/birdbackground.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: cover; // Cover the entire container
+    background-position: center; // Centered
+    background-repeat: no-repeat; // Don't repeat the image
+    background-attachment: fixed; // Fix the image in place
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,6 +25,7 @@ const HomePage = styled.div`
     justify-content: center;
 `;
 
+// Styled component for the card that contains the titles, input, and button
 const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -27,7 +36,7 @@ const StyledDiv = styled.div`
     padding: 10vh 6vw;
     max-width: 60vw;
     text-align: center;
-    background-color: rgba(255,255,255,50%);
+    background-color: rgba(255,255,255,50%); // Adding a semitransparent white background to improve text readability
     border-radius: 50px;
     
     h1 {
@@ -36,7 +45,7 @@ const StyledDiv = styled.div`
     }
 
     h3 {
-        font-size: calc(10px + 1.5vw);
+        font-size: calc(15px + 1vw);
         margin-bottom: 3vh;
     }
 
@@ -45,12 +54,12 @@ const StyledDiv = styled.div`
     }
 `;
 
-
+// Styled input for input box
 const StyledInput = styled.input`
     padding: 1vh;
     margin-bottom: 3vh;
     border-radius: 10px;
-    font-size: calc(5px + 1.5vw);
+    font-size: calc(10px + 1vw);
     width: 80%;
     max-width: 300px;
     background-color: #FFFF;
@@ -61,6 +70,7 @@ const StyledInput = styled.input`
     }
 `;
 
+// Styled component for submit button
 const StyledButton = styled.button`
     font-weight: bold;
     font-size: calc(10px + 0.5vw);
@@ -80,16 +90,17 @@ const StyledButton = styled.button`
 
 
 export default function Home() {
-  const [region, setRegion] = useState("");
+    // useState hook that tracks inputted region code
+    const [region, setRegion] = useState("");
 
-  return (
-      <HomePage>
-        <StyledDiv>
-          <h1>eBird</h1>
-          <h3>Enter an eBird Region Code to see bird sightings in the area.</h3>
-            <StyledInput type="text" placeholder="e.g. US-NY-053" value={region} onChange={(e) =>setRegion(e.target.value)}/>
-          <Link href={`/${region}`} passHref><StyledButton>Get Bird Data</StyledButton></Link>
-        </StyledDiv>
-      </HomePage>
-  );
+    return (
+        <HomePage>
+            <StyledDiv>
+                <h1>eBird</h1> {/* Title */}
+                <h3>Enter an eBird Region Code to see bird sightings in the area.</h3> {/* Instructions */}
+                <StyledInput type="text" placeholder="e.g. US-NY-053" value={region} onChange={(e) =>setRegion(e.target.value)}/> {/* Controlled input field for region code */}
+                <Link href={`/${region}`} passHref><StyledButton>Get Bird Data</StyledButton></Link> {/* Button that navigate user to the observation page of the inputted region */}
+            </StyledDiv>
+        </HomePage>
+    );
 }
