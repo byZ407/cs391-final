@@ -128,7 +128,7 @@ export default function RegionPage() {
 
             {/* Display the list of bird observations for the region or a message if no observations found */}
             {birdsToShow.length === 0 ? (
-                <p>No observations found.</p>
+                <p className="text-2xl">No observations found.</p>
             ) : (
                 birdsToShow.map((bird) => (
                     <BirdObservation
