@@ -67,9 +67,27 @@ export default function RegionPage() {
     const [visibleCount, setVisibleCount] = useState(5);
 
     // Error handling for invalid region
-    if (!region) return <div style={{ color: "red" }}>Invalid region code</div>;
+    if (!region) return <div style={{
+        color: "red",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "3vw"
+    }}>
+        Invalid region code
+    </div>;
     // Error handling for error returned from fetch
-    if (error) return <div style={{ color: "red" }}>Error: {error.message}</div>;
+    if (error) return <div style={{
+        color: "red",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "3vw"
+    }}>
+        Error: {error.message}
+    </div>;
     // Show loading screen while fetching data
     if (!data) return <div style={{
         color: "black",
@@ -83,7 +101,16 @@ export default function RegionPage() {
     </div>;
 
     // Error handling for API responding with an error field
-    if (data.error) return <div style={{ color: "red" }}>Error: {data.error}</div>;
+    if (data.error) return <div style={{
+        color: "red",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "3vw"
+    }}>
+        Error: {data.error}
+    </div>;
 
     // Store fetched observation data in an array
     const allBirds: BirdObservationData[] = data.data;
